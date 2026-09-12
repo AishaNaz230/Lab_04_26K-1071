@@ -1,0 +1,30 @@
+// QNO:3  get and process number of pizza from user
+#include <stdio.h>
+
+int main()
+{
+    int number_of_pizza;
+
+    printf("Enter number_of_pizza\n");
+    scanf("%d", &number_of_pizza);
+
+    if (number_of_pizza == 1)
+    {
+        printf("Final package total is 8\n");
+        printf("Quantity of pizza is 1\n");
+    }
+    else if (number_of_pizza == 2)
+    {
+        printf("Final package total is 15\n");
+        printf("Quantity of pizza is 2\n");
+    }
+    else if (number_of_pizza == 3)
+    {
+        printf("Final package total is 21\n");
+        printf("Quantity of pizza is 3\n");
+    }
+    else
+    {
+        printf("Invalid number_of_pizza\n");
+    }
+}
