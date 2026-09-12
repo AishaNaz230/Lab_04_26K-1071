@@ -1,0 +1,26 @@
+// QNO:8  get from user and process garlic bread eligibility 
+#include <stdio.h>
+
+int main()
+{
+    int number_of_pizza;
+    int crust_type;
+
+    printf("Enter number of pizza you ordered\n");
+    scanf("%d", &number_of_pizza);
+
+    printf(" 1 for regular\n");
+    printf(" 2 for thin\n");
+    printf(" 3 for stuffed\n");
+    printf("Enter crust_type you ordered\n");
+    scanf("%d", &crust_type);
+
+    if (number_of_pizza == 3 && crust_type == 3)
+    {
+        printf("You get free garlic bread!\n");
+    }
+    else
+    {
+        printf("Thank you for your order!\n");
+    }
+}
