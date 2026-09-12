@@ -1,0 +1,34 @@
+// QNO:9  get and process delivery and pickup charges from user
+#include <stdio.h>
+
+int main()
+{
+    int order_total;
+    int option;
+    int total;
+    int fuel_charge = 3;
+    printf("Enter order total: \n");
+    scanf("%d", &order_total);
+
+    printf("please fill the option\n");
+    printf("1 for pickup\n");
+    printf("2 for delivary\n");
+
+    printf("Enter option\n");
+    scanf("%d", &option);
+
+    switch (option)
+    {
+
+    case 1:
+        total = order_total;
+        printf("you total amount is %d\n", total);
+        break;
+    case 2:
+        total = order_total + fuel_charge;
+        printf("your total amount is %d\n", total);
+        break;
+    default:
+        printf("please choose an option\n");
+    }
+}
