@@ -1,0 +1,207 @@
+// QNO:10  combination of questions from 1 to 9
+#include <stdio.h>
+
+int main()
+{
+
+#pragma region initializing variable
+    // Initializing variable used inside all questions
+    int pizza_size;
+    int quantity_of_pizza;
+    int crust_type;
+    int current_time;
+    int option;
+    char student_id;
+    char cheese;
+    float Bill;
+    float cheese_charge;
+    float crust_charge;
+    float time_discount;
+    float student_discount;
+    float fuel_charge;
+#pragma endregion
+
+#pragma region size of pizza
+    printf("----Enter size of pizza: -----\n\n");
+    printf("1 for small size \n");
+    printf("2 for medium size \n");
+    printf("3 for large size \n");
+
+    scanf("%d", &pizza_size);
+
+    if (pizza_size <= 0 || pizza_size > 3)
+    {
+        printf("You have entered wrong value for the size of Pizza, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region pizza quantity and base price
+    printf("-----Enter quantity_of_pizza , You can just enter 1 or 2 or 3 this time: -----\n\n");
+    scanf("%d", &quantity_of_pizza);
+
+    if (quantity_of_pizza == 1)
+    {
+        Bill = 8.0;
+    }
+    else if (quantity_of_pizza == 2)
+    {
+        Bill = 15.0;
+        printf("check your multi pizza deal\n");
+    }
+    else if (quantity_of_pizza == 3)
+    {
+        Bill = 21.0;
+        printf("check your multi pizza deal\n");
+    }
+    else
+    {
+        printf("You have entered invalid value, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region crust type and crust charges
+
+    printf("----Enter crust_type----\n\n");
+    printf(" 1 for regular\n");
+    printf(" 2 for thin\n");
+    printf(" 3 for stuffed\n");
+    scanf("%d", &crust_type);
+
+    if (crust_type == 1)
+    {
+        crust_charge = 0.0;
+        Bill = Bill + crust_charge;
+    }
+    else if (crust_type == 2)
+    {
+        crust_charge = 1.0;
+        Bill = Bill + crust_charge;
+    }
+    else if (crust_type == 3)
+    {
+        crust_charge = 2.0;
+        Bill = Bill + crust_charge;
+    }
+    else
+    {
+        printf("You have entered invalid value for the crust type, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region extra cheese and extra chees charges
+    printf("----Do you want extra cheese(y/n)?----\n\n");
+    scanf(" %c", &cheese);
+    if (cheese == 'y' || cheese == 'Y')
+    {
+        cheese_charge = 1.50;
+        Bill = Bill + cheese_charge;
+    }
+    else if (cheese == 'n' || cheese == 'N')
+    {
+        cheese_charge = 0.0;
+        Bill = Bill + cheese_charge;
+    }
+    else
+    {
+        printf("You have entered invalid value for extra cheese, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region current hour and happy hours discount
+    printf("----Enter current time of the day (0 to 23)----\n\n");
+    scanf("%d", &current_time);
+    if (current_time >= 0 && current_time <= 23)
+    {
+        if (current_time >= 11 && current_time <= 14)
+        {
+            time_discount = Bill * 0.10;
+            Bill = Bill - time_discount;
+        }
+    }
+    else
+    {
+        printf("You have entered invalid value for the current time of day, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region student-ID discount
+    printf("-----Do you have student ID (y/n)?-----\n\n");
+    scanf(" %c", &student_id);
+    if (student_id == 'y' || student_id == 'Y')
+    {
+        student_discount = 2.0;
+        Bill = Bill - student_discount;
+    }
+    else if (student_id == 'n' || student_id == 'N')
+    {
+        student_discount = 0.0;
+        Bill = Bill - student_discount;
+    }
+    else
+    {
+        printf("You have entered invalid character for the student ID, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region negative bill validation
+    if (Bill < 0)
+    {
+        Bill = 0;
+    }
+    else
+    {
+        Bill = Bill;
+    }
+#pragma endregion
+
+#pragma region free garlic bread bonus eligibility
+    if (quantity_of_pizza == 3 && crust_type == 3)
+    {
+        printf("You got free garlic bread\n");
+    }
+    else
+    {
+        printf("Thank you for your order\n");
+    }
+#pragma endregion
+
+#pragma region delivery charges and pickup
+    printf("----Enter option----\n\n");
+    printf("1 for pickup\n");
+    printf("2 for delivary\n");
+
+    scanf("%d", &option);
+
+    if (option == 1)
+    {
+        fuel_charge = 0.0;
+        Bill = Bill + fuel_charge;
+    }
+    else if (option == 2)
+    {
+        fuel_charge = 3.0;
+        Bill = Bill + fuel_charge;
+    }
+    else
+    {
+        printf("You have entered invalid character for the student ID, exiting the process \n\n------Thank You---------");
+        return 0;
+    }
+#pragma endregion
+
+#pragma region final result
+    printf("Pizza size is %d\n", pizza_size);
+    printf("Quantity of pizza is %d\n", quantity_of_pizza);
+    printf("Crust Type is %d and Crust Charge is %.2f\n", crust_type, crust_charge);
+    printf("Cheese charge is %.2f\n", cheese_charge);
+    printf("Time Discout is %.2f\n", time_discount);
+    printf("Student Discout is %.2f\n", student_discount);
+    printf("FINAL BILL iS:%.2f\n", Bill);
+#pragma endregion
+}
