@@ -1,0 +1,29 @@
+// QNO:1  get and process size of pizza from user
+#include <stdio.h>
+
+int main()
+{
+
+    int size;
+    printf("Enter size: \n");
+    printf("1.small size \n");
+    printf("2.medium size \n");
+    printf("3.large size \n");
+
+    scanf("%d", &size);
+
+    switch (size)
+    {
+    case 1:
+        printf("You selected small size\n");
+        break;
+    case 2:
+        printf("You selected medium size\n");
+        break;
+    case 3:
+        printf("You selected large size\n");
+        break;
+    default:
+        printf("invalid size\n");
+    }
+}
