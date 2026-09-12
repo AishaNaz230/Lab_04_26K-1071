@@ -1,0 +1,40 @@
+// QNO:4  get and crust type and surcharges from user
+#include <stdio.h>
+
+int main()
+{
+    int current_total_cost;
+    int crust_type;
+    int total_bill;
+
+    printf("Enter current_total_cost\n");
+    scanf("%d", &current_total_cost);
+
+    printf(" 1 for regular\n");
+    printf(" 2 for thin\n");
+    printf(" 3 for stuffed\n");
+
+    printf("Enter crust_type\n");
+    scanf("%d", &crust_type);
+
+    switch (crust_type)
+    {
+    case 1:
+        printf("surcharge is 0\n");
+        total_bill = current_total_cost + 0;
+        printf("total bill is %d\n", total_bill);
+        break;
+    case 2:
+        printf("surcharge is 1\n");
+        total_bill = current_total_cost + 1;
+        printf("total bill is %d\n", total_bill);
+        break;
+    case 3:
+        printf("surcharge is 2\n");
+        total_bill = current_total_cost + 2;
+        printf("total bill is %d\n", total_bill);
+        break;
+    default:
+        printf("invalid type of crust\n");
+    }
+}
