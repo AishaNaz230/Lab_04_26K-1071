@@ -1,0 +1,43 @@
+// QNO:7  get and process student-ID and negative bill related information from user
+#include <stdio.h>
+
+int main()
+{
+    float current_bill;
+    char student_id;
+    float total_bill;
+    float Final_bill;
+
+    printf("Enter current_bill\n");
+    scanf("%f", &current_bill);
+
+    printf("Enter student_id\n");
+    scanf(" %c", &student_id);
+
+    if (student_id == 'y' || student_id == 'Y')
+    {
+        printf("discout is available to you\n");
+        total_bill = current_bill - 2;
+        printf("your total bill after discount is %f\n", total_bill);
+    }
+    else if (student_id == 'n' || student_id == 'N')
+    {
+        printf("no discout is available to you\n");
+        total_bill = current_bill - 0;
+        printf("your total bill after discount is %f\n", total_bill);
+    }
+    else
+    {
+        printf("Invalid input please answer me correctly\n");
+    }
+    if (total_bill < 0)
+    {
+        Final_bill = 0;
+        printf("your Final bill is %.3f\n", Final_bill);
+    }
+    else
+    {
+        Final_bill = total_bill;
+        printf("your Final bill is %.3f\n", Final_bill);
+    }
+}
