@@ -1,0 +1,30 @@
+// QNO:5  get and process extra cheese from user
+#include <stdio.h>
+
+int main()
+{
+    float current_cost;
+    float updated_bill;
+    char cheese;
+    printf("Enter current cost\n");
+    scanf("%f", &current_cost);
+
+    printf("Do you want extra cheese(y/n)?\n");
+    scanf(" %c", &cheese);
+    if (cheese == 'y' || cheese == 'Y')
+    {
+        printf("extra charge is 1.50\n");
+        updated_bill = current_cost + 1.50;
+        printf("the updated bill is %f\n", updated_bill);
+    }
+    else if (cheese == 'n' || cheese == 'N')
+    {
+        printf("no extra charge apply\n");
+        updated_bill = current_cost + 0;
+        printf("the updated bill is %f\n", updated_bill);
+    }
+    else
+    {
+        printf("Invalid input please answer me correctly\n");
+    }
+}
