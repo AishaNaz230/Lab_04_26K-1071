@@ -203,6 +203,7 @@ printf("-------------------ORDER RECEIPT---------------------------\n");
     printf("Cheese charge is %.2f\n", cheese_charge);
     printf("Time Discout is %.2f\n", time_discount);
     printf("Student Discout is %.2f\n", student_discount);
+    printf("delivery charge is %.2f\n",fuel_charge);
 printf("----------------------------------------------------------------\n");
 printf("                    FINAL BILL                                  \n");
 printf("----------------------------------------------------------------\n");
