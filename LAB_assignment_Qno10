@@ -196,12 +196,16 @@ int main()
 #pragma endregion
 
 #pragma region final result
+printf("-------------------ORDER RECEIPT---------------------------\n");
     printf("Pizza size is %d\n", pizza_size);
     printf("Quantity of pizza is %d\n", quantity_of_pizza);
     printf("Crust Type is %d and Crust Charge is %.2f\n", crust_type, crust_charge);
     printf("Cheese charge is %.2f\n", cheese_charge);
     printf("Time Discout is %.2f\n", time_discount);
     printf("Student Discout is %.2f\n", student_discount);
+printf("----------------------------------------------------------------\n");
+printf("                    FINAL BILL                                  \n");
+printf("----------------------------------------------------------------\n");
     printf("FINAL BILL iS:%.2f\n", Bill);
 #pragma endregion
 }
